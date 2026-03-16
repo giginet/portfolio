@@ -8,19 +8,21 @@
 }
 
 :root {
-  --color-bg: #0d1117;
-  --color-bg-alt: #161b22;
-  --color-surface: #1c2128;
-  --color-border: #30363d;
-  --color-text: #e6edf3;
-  --color-text-muted: #8b949e;
-  --color-accent: #58a6ff;
-  --color-accent-hover: #79c0ff;
-  --color-tag-bg: #1f2937;
-  --color-tag-text: #7dd3fc;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-bg: #fffaf5;
+  --color-bg-alt: #fff0e8;
+  --color-surface: #ffffff;
+  --color-border: #f0d0c0;
+  --color-text: #2d1a0e;
+  --color-text-muted: #8a6a5a;
+  --color-accent: #e60012;
+  --color-accent-hover: #ff2030;
+  --color-accent-light: #fff0ee;
+  --color-tag-bg: #ffe8e5;
+  --color-tag-text: #c4000f;
+  --font-sans: 'M PLUS Rounded 1c', 'Zen Maru Gothic', 'Nunito', sans-serif;
+  --font-heading: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
   --max-width: 960px;
+  --radius: 16px;
 }
 
 html {
@@ -31,7 +33,7 @@ body {
   font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.7;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -58,9 +60,9 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(13, 17, 23, 0.85);
+  background: rgba(255, 250, 245, 0.9);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .nav-inner {
@@ -74,59 +76,64 @@ a:hover {
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--color-accent);
 }
 
 .nav-logo:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-hover);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 24px;
 }
 
 .nav-links a {
   color: var(--color-text-muted);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 700;
+  transition: color 0.15s;
 }
 
 .nav-links a:hover {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 /* ===== Hero ===== */
 .hero {
   padding: 160px 0 100px;
   text-align: center;
+  background: linear-gradient(180deg, var(--color-accent-light) 0%, var(--color-bg) 100%);
 }
 
 .hero-avatar {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 3px solid var(--color-border);
+  border: 5px solid var(--color-accent);
   margin-bottom: 24px;
   image-rendering: pixelated;
+  box-shadow: 0 8px 30px rgba(230, 0, 18, 0.15);
 }
 
 .hero-name {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--color-accent);
   letter-spacing: -0.02em;
   margin-bottom: 8px;
 }
 
 .hero-tagline {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  color: var(--color-accent);
-  font-weight: 500;
+  color: var(--color-text);
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -154,31 +161,38 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 10px 24px;
-  border-radius: 8px;
+  border-radius: 999px;
   font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.15s;
+  font-weight: 700;
+  transition: all 0.2s;
+  border: 2px solid transparent;
 }
 
 .btn-primary {
   background: var(--color-accent);
-  color: var(--color-bg);
+  color: #fff;
+  border-color: var(--color-accent);
 }
 
 .btn-primary:hover {
   background: var(--color-accent-hover);
-  color: var(--color-bg);
+  border-color: var(--color-accent-hover);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 0, 18, 0.3);
 }
 
 .btn-secondary {
   background: var(--color-surface);
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-text-muted);
-  color: var(--color-text);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 0, 18, 0.1);
 }
 
 /* ===== Sections ===== */
@@ -191,8 +205,9 @@ a:hover {
 }
 
 .section-title {
+  font-family: var(--font-heading);
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 40px;
   letter-spacing: -0.01em;
 }
@@ -200,7 +215,6 @@ a:hover {
 .section-title::before {
   content: '# ';
   color: var(--color-accent);
-  font-family: var(--font-mono);
 }
 
 /* ===== About ===== */
@@ -222,9 +236,9 @@ a:hover {
   background: var(--color-tag-bg);
   color: var(--color-tag-text);
   padding: 6px 14px;
-  border-radius: 20px;
+  border-radius: 999px;
   font-size: 0.825rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* ===== Career ===== */
@@ -242,9 +256,9 @@ a:hover {
 }
 
 .career-period {
-  font-family: var(--font-mono);
   font-size: 0.825rem;
   color: var(--color-text-muted);
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -256,7 +270,7 @@ a:hover {
 
 .career-org {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .career-link {
@@ -282,16 +296,17 @@ a:hover {
 .project-card {
   display: block;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
   padding: 24px;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   color: var(--color-text);
 }
 
 .project-card:hover {
   border-color: var(--color-accent);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(230, 0, 18, 0.1);
   color: var(--color-text);
 }
 
@@ -303,15 +318,16 @@ a:hover {
 }
 
 .project-name {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 800;
+  color: var(--color-accent);
 }
 
 .project-stars {
-  color: #e3b341;
+  color: #e6a700;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .project-desc {
@@ -329,12 +345,12 @@ a:hover {
 
 .tag-sm {
   display: inline-block;
-  background: rgba(88, 166, 255, 0.1);
+  background: var(--color-tag-bg);
   color: var(--color-accent);
   padding: 3px 10px;
-  border-radius: 12px;
+  border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* ===== Talks ===== */
@@ -352,12 +368,12 @@ a:hover {
 }
 
 .talk-year summary h3 {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-size: 1.3rem;
   color: var(--color-accent);
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px dashed var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -394,12 +410,12 @@ a:hover {
 .talk-event {
   font-size: 0.85rem;
   color: var(--color-text-muted);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .talk-title {
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a.talk-title {
@@ -419,20 +435,22 @@ a.talk-title:hover {
 
 .talk-links a {
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--color-accent);
 }
 
 /* ===== Writing ===== */
 .subsection-title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
   color: var(--color-text-muted);
 }
 
 .subsubsection-title {
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-muted);
   margin-bottom: 12px;
   padding-left: 4px;
@@ -458,9 +476,9 @@ a.talk-title:hover {
 }
 
 .book-year {
-  font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--color-text-muted);
+  font-weight: 700;
   min-width: 60px;
 }
 
@@ -488,7 +506,7 @@ a.talk-title:hover {
   padding: 14px 0;
   border-bottom: 1px solid var(--color-border);
   color: var(--color-text);
-  transition: background 0.15s;
+  transition: color 0.15s;
 }
 
 .post-item:hover {
@@ -496,9 +514,9 @@ a.talk-title:hover {
 }
 
 .post-date {
-  font-family: var(--font-mono);
   font-size: 0.825rem;
   color: var(--color-text-muted);
+  font-weight: 700;
   min-width: 72px;
   flex-shrink: 0;
 }
@@ -517,7 +535,8 @@ a.talk-title:hover {
 .footer {
   padding: 48px 0;
   text-align: center;
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  background: var(--color-bg-alt);
 }
 
 .footer-icon {
@@ -544,10 +563,11 @@ a.talk-title:hover {
 .footer-links a {
   color: var(--color-text-muted);
   font-size: 0.875rem;
+  font-weight: 700;
 }
 
 .footer-links a:hover {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .footer-copy {
