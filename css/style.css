@@ -103,6 +103,39 @@ a:hover {
   color: var(--color-accent);
 }
 
+/* ===== Hiring Banner ===== */
+.hiring-banner {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 28px 0;
+  text-align: center;
+}
+
+.hiring-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.hiring-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+.hiring-content a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.hiring-content a:hover {
+  opacity: 0.8;
+}
+
 /* ===== Hero ===== */
 .hero {
   padding: 160px 0 100px;
