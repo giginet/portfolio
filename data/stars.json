@@ -6,5 +6,8 @@
   "giginet/Toybox": 130,
   "giginet/NESEmulator-watchOS": 127,
   "giginet/xcodeproj-mcp-server": 122,
-  "giginet/Peafowl": 91
+  "giginet/Peafowl": 91,
+  "fastlane/fastlane": 41183,
+  "Carthage/Carthage": 15403,
+  "yonaskolb/XcodeGen": 8234
 }

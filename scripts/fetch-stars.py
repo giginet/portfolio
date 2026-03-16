@@ -13,6 +13,9 @@ REPOS = [
     "giginet/NESEmulator-watchOS",
     "giginet/xcodeproj-mcp-server",
     "giginet/Peafowl",
+    "fastlane/fastlane",
+    "Carthage/Carthage",
+    "yonaskolb/XcodeGen",
 ]
 
 OUTPUT_PATH = "data/stars.json"
