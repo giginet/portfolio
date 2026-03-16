@@ -25,10 +25,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Fetch RSS feed
+      - name: Fetch RSS feed and star counts
         run: |
           mkdir -p data
           python3 scripts/fetch-rss.py
+          python3 scripts/fetch-stars.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
