@@ -368,6 +368,15 @@ a:hover {
   font-weight: 500;
 }
 
+a.talk-title {
+  color: var(--color-text);
+  transition: color 0.15s;
+}
+
+a.talk-title:hover {
+  color: var(--color-accent);
+}
+
 .talk-links {
   grid-column: 2;
   display: flex;
