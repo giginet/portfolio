@@ -669,8 +669,12 @@ a.talk-title:hover {
     grid-template-columns: 1fr;
   }
 
-  .talk-links {
+  .talk-item a[href*="youtube"] {
     grid-column: 1;
+  }
+
+  .talk-event {
+    margin-bottom: 2px;
   }
 
   .nav-links {
